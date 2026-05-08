@@ -10,29 +10,29 @@ const Hero = () => {
     const ctx = gsap.context(() => {
       // TEXT REVEAL (mask animation)
       gsap.from(".reveal", {
-        y: 100,
+        y: 120,
         opacity: 0,
-        duration: 1,
+        duration: 1.2,
         ease: "power4.out",
-        stagger: 0.2,
+        stagger: 0.15,
       });
 
       // SUBTEXT & AGENCY INFO
       gsap.from(".subtext", {
-        y: 40,
+        y: 30,
         opacity: 0,
-        delay: 0.6,
+        delay: 0.8,
         duration: 1,
         ease: "power3.out",
         stagger: 0.2,
       });
 
-      // PARALLAX FLOAT
+      // PARALLAX FLOAT FOR DOWN ARROW
       gsap.to(".floating", {
-        y: 20,
+        y: 15,
         repeat: -1,
         yoyo: true,
-        duration: 3,
+        duration: 2.5,
         ease: "sine.inOut",
       });
     }, heroRef);
@@ -43,131 +43,146 @@ const Hero = () => {
   return (
     <section
       ref={heroRef}
-      className="relative w-full min-h-[calc(100vh-6rem)] bg-white flex flex-col items-center justify-center overflow-hidden px-6"
+      className="relative w-full min-h-screen bg-white text-black flex flex-col items-center justify-center overflow-hidden px-6 selection:bg-zinc-200"
     >
+      {/* ================= MAIN CONTENT ================= */}
+      <div className="z-10 flex flex-col items-center mt-[-10vh]">
+        
+        {/* HEADING (Translated to English) */}
+        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.1] text-center whitespace-nowrap">
+          
+          {/* Top Line */}
+          <div className="overflow-hidden pb-2">
+            <span className="block reveal">
+              <span className="font-bold tracking-normal">CREATIVE</span>{' '}
+              <span className="font-light tracking-wide lowercase">&</span>{' '}
+              <span className="font-light tracking-widest text-zinc-400">HUMAN</span>
+            </span>
+          </div>
+
+          {/* Bottom Line */}
+          <div className="overflow-hidden pb-2">
+            <span className="block reveal">
+              <span className="font-light tracking-widest">DEVELOPMENT </span>
+              <span className="font-black tracking-tight">AGENCY</span>
+            </span>
+          </div>
+        </h1>
+
+        {/* AGENCY INFO WITH HAND-DRAWN ARROW */}
+        <div className="subtext relative mt-16 flex flex-col items-center max-w-sm mx-auto">
+          {/* Hand-drawn arrow SVG (Pointing Up-Left) */}
+          <svg 
+            className="absolute -left-20 -top-16 w-16 h-16 text-black hidden md:block" 
+            viewBox="0 0 100 100" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M70 80 C 50 80, 30 60, 30 20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+            <path d="M15 35 L 30 20 L 45 25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+          </svg>
+          
+          <p className="text-sm md:text-base font-light text-zinc-800 text-center font-sans">
+            Marketing, communication and web <br className="hidden md:block"/>
+            development agency in Hyderabad
+          </p>
+        </div>
+      </div>
+
       {/* ================= LEFT BOTTOM CIRCLE ================= */}
-      <div className="absolute bottom-10 left-6 lg:left-16 group cursor-pointer hidden md:block">
+      <div className="absolute bottom-12 left-6 lg:left-16 group cursor-pointer hidden sm:block">
         <motion.div
-          whileHover={{ scale: 1.1 }}
-          className="relative w-[140px] h-[140px]"
+          whileHover={{ scale: 1.05 }}
+          className="relative w-[160px] h-[160px]"
         >
+          {/* Rotating Text */}
           <motion.svg
             viewBox="0 0 100 100"
-            className="w-full h-full text-[#192747] group-hover:text-[#fcba00] transition-colors duration-300"
+            className="w-full h-full text-black"
             animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
           >
             <defs>
               <path
                 id="circlePath"
-                d="M50,50 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"
+                d="M50,50 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"
               />
             </defs>
 
             <text
               fill="currentColor"
-              fontSize="8"
-              letterSpacing="3.5"
-              className="uppercase font-semibold font-tensor"
+              fontSize="9"
+              letterSpacing="6.5"
+              className="uppercase font-light tracking-widest"
             >
-              <textPath href="#circlePath">
-                • DISCOVER OUR SERVICES • DISCOVER OUR SERVICES
+              <textPath href="#circlePath" startOffset="0%">
+                D I S C O V E R &nbsp; O U R &nbsp; S E R V I C E S ! &nbsp; 
               </textPath>
             </text>
           </motion.svg>
 
-          {/* CENTER ARROW */}
+          {/* CENTER DOWN ARROW */}
           <div className="absolute inset-0 flex items-center justify-center floating">
             <svg
-              className="w-6 h-6 text-[#192747] group-hover:text-[#fcba00] transition-colors duration-300"
+              className="w-8 h-8 text-black"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="1"
               viewBox="0 0 24 24"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14m0 0l-6-6m6 6l6-6" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m0 0l-6-6m6 6l6-6" />
             </svg>
           </div>
         </motion.div>
       </div>
 
-      {/* ================= MAIN CONTENT ================= */}
-      <div className="max-w-5xl text-center z-10">
+      {/* ================= RIGHT BOTTOM CACTUS & SOCIALS ================= */}
+      <div className="absolute bottom-0 right-10 lg:right-32 flex items-end opacity-0 subtext">
         
-        {/* HEADING */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold font-eczar text-[#192747] leading-[1.05] tracking-tight">
-          <div className="overflow-hidden">
-            <span className="block reveal font-extrabold">
-              Creative Strategy.
-            </span>
-          </div>
-
-          <div className="overflow-hidden">
-            <span className="block reveal text-slate-400 font-light italic">
-              Digital Innovation.
-            </span>
-          </div>
-
-          <div className="overflow-hidden">
-            <span className="block reveal relative font-semibold">
-              Human-Centered Design.
-              <span className="absolute left-0 bottom-2 w-full h-[8px] bg-[#fcba00]/30 -z-10 rounded-full"></span>
-            </span>
-          </div>
-        </h1>
-
-        {/* MAIN SUBTEXT */}
-        <p className="subtext mt-8 text-lg sm:text-xl text-[#192747]/80 max-w-2xl mx-auto font-helvetica">
-          Where Design, Development & Marketing Work as One —
-          <span className="text-[#fcba00] font-semibold">
-            {" "}Driving Creativity, Technology & Growth.
-          </span>
-        </p>
-
-        {/* AGENCY INFO WITH HAND-DRAWN ARROW */}
-        <div className="subtext relative mt-12 flex justify-center items-start max-w-md mx-auto">
-          {/* Hand-drawn arrow SVG */}
-          <svg 
-            className="absolute -left-12 -top-4 w-12 h-12 text-[#192747] hidden sm:block" 
-            viewBox="0 0 100 100" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M80 80 C 60 80, 30 60, 20 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none"/>
-            <path d="M10 35 L 20 20 L 35 25" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+        {/* Decorative SVG Cactus */}
+        <div className="w-24 h-24 md:w-32 md:h-32 mb-8 mr-8">
+          <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+            <circle cx="80" cy="100" r="58" fill="black" stroke="white" strokeWidth="2"/>
+            <path d="M80 42 C45 42, 22 75, 22 100" stroke="white" strokeWidth="2" fill="none"/>
+            <path d="M80 42 C115 42, 138 75, 138 100" stroke="white" strokeWidth="2" fill="none"/>
+            <path d="M80 42 V 158" stroke="white" strokeWidth="2"/>
+            <path d="M58 46 C40 70, 40 120, 58 153" stroke="white" strokeWidth="2" fill="none"/>
+            <path d="M102 46 C120 70, 120 120, 102 153" stroke="white" strokeWidth="2" fill="none"/>
+            <path d="M80 42 Q 70 25 80 30 Q 90 25 80 42" fill="white"/>
+            <path d="M74 35 Q 60 25 66 40" stroke="white" strokeWidth="2" fill="none"/>
+            <path d="M86 35 Q 100 25 94 40" stroke="white" strokeWidth="2" fill="none"/>
           </svg>
+        </div>
+
+        {/* Social Links (Right Edge) - Facebook, Instagram, WhatsApp */}
+        <div className="flex flex-col gap-6 mb-12 relative -right-12 lg:-right-24 text-black">
           
-          <p className="text-sm sm:text-base font-medium text-[#192747] font-helvetica">
-            Marketing, web development and graphic design agency
-          </p>
+          {/* Facebook */}
+          <a href="#" className="hover:text-zinc-500 transition-colors" aria-label="Facebook">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+
+          {/* Instagram */}
+          <a href="#" className="hover:text-zinc-500 transition-colors" aria-label="Instagram">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+
+          {/* WhatsApp */}
+          <a href="#" className="hover:text-zinc-500 transition-colors" aria-label="WhatsApp">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </a>
+
         </div>
       </div>
 
-      {/* ================= RIGHT SOCIAL ICONS ================= */}
-      <div className="hidden lg:flex absolute right-6 lg:right-12 top-1/2 -translate-y-1/2 flex-col space-y-8 z-20">
-        <a href="#" className="text-[#192747] hover:text-[#fcba00] hover:-translate-y-1 transition-all duration-300" aria-label="Facebook">
-          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-          </svg>
-        </a>
-
-        <a href="#" className="text-[#192747] hover:text-[#fcba00] hover:-translate-y-1 transition-all duration-300" aria-label="LinkedIn">
-          <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-          </svg>
-        </a>
-
-        <a href="#" className="text-[#192747] hover:text-[#fcba00] hover:-translate-y-1 transition-all duration-300" aria-label="Instagram">
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
-        </a>
-      </div>
-
-      {/* ================= BACKGROUND GLOW ================= */}
-      <div className="absolute w-[500px] h-[500px] bg-[#fcba00]/10 blur-[120px] rounded-full top-[-100px] right-[-100px] pointer-events-none"></div>
     </section>
   );
 };
