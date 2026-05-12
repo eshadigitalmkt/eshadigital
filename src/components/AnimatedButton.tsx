@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 
 interface AnimatedButtonProps {
@@ -12,34 +14,60 @@ export default function AnimatedButton({
   const letters = text.split("");
 
   return (
-    <div className="w-full flex justify-center bg-black py-20">
+    <div className="w-full flex justify-center py-10 sm:py-14 md:py-20">
       <motion.button
         initial="initial"
         whileHover="hover"
+        whileTap={{ scale: 0.98 }}
         className={`
           relative
           group
           w-full
-          max-w-[700px]
-          h-[70px]
+          max-w-[95%]
+          sm:max-w-[620px]
+          lg:max-w-[700px]
+          
+          h-[58px]
+          sm:h-[64px]
+          md:h-[70px]
+
           bg-white
           overflow-hidden
+
           flex
           items-center
           justify-center
-          px-10
+
+          px-5
+          sm:px-8
+          md:px-10
+
+          transition-all
+          duration-300
+
           ${className}
         `}
       >
-        {/* MAIN TEXT */}
+        {/* ================= TEXT ================= */}
+
         <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-          <div className="flex">
+
+          <div className="flex items-center justify-center flex-wrap px-10 sm:px-12">
+
             {letters.map((char, index) => (
               <div
                 key={index}
-                className="relative overflow-hidden h-[34px]"
+                className="
+                  relative
+                  overflow-hidden
+
+                  h-[24px]
+                  sm:h-[30px]
+                  md:h-[34px]
+                "
               >
-                {/* TOP */}
+                {/* TOP TEXT */}
+
                 <motion.span
                   variants={{
                     initial: { y: 0 },
@@ -48,23 +76,37 @@ export default function AnimatedButton({
                   transition={{
                     duration: 0.25,
                     ease: [0.215, 0.61, 0.355, 1],
-                    delay: index * 0.02,
+                    delay: index * 0.018,
                   }}
                   className="
                     block
-                    font-tensor
-                    text-[26px]
+
+                    text-[14px]
+                    sm:text-[20px]
+                    md:text-[26px]
+
                     font-bold
-                    leading-[33.8px]
                     uppercase
+
+                    leading-[24px]
+                    sm:leading-[30px]
+                    md:leading-[33.8px]
+
+                    tracking-[0.08em]
+
                     text-black
-                    px-[2px]
+
+                    px-[1px]
+                    sm:px-[2px]
+
+                    whitespace-nowrap
                   "
                 >
                   {char === " " ? "\u00A0" : char}
                 </motion.span>
 
-                {/* BOTTOM */}
+                {/* BOTTOM TEXT */}
+
                 <motion.span
                   variants={{
                     initial: { y: 60 },
@@ -73,20 +115,34 @@ export default function AnimatedButton({
                   transition={{
                     duration: 0.25,
                     ease: [0.215, 0.61, 0.355, 1],
-                    delay: index * 0.02,
+                    delay: index * 0.018,
                   }}
                   className="
                     absolute
                     left-0
                     top-0
+
                     block
-                    font-tensor
-                    text-[26px]
+
+                    text-[14px]
+                    sm:text-[20px]
+                    md:text-[26px]
+
                     font-bold
-                    leading-[33.8px]
                     uppercase
+
+                    leading-[24px]
+                    sm:leading-[30px]
+                    md:leading-[33.8px]
+
+                    tracking-[0.08em]
+
                     text-black
-                    px-[2px]
+
+                    px-[1px]
+                    sm:px-[2px]
+
+                    whitespace-nowrap
                   "
                 >
                   {char === " " ? "\u00A0" : char}
@@ -96,17 +152,33 @@ export default function AnimatedButton({
           </div>
         </div>
 
-        {/* ARROW */}
+        {/* ================= ARROW ================= */}
+
         <motion.div
           variants={{
             initial: { x: 0 },
             hover: { x: 6 },
           }}
-          transition={{ duration: 0.25 }}
-          className="absolute right-8 text-black  transition-colors duration-300"
+          transition={{
+            duration: 0.25,
+          }}
+          className="
+            absolute
+
+            right-4
+            sm:right-6
+            md:right-8
+
+            text-black
+          "
         >
           <svg
-            className="w-5 h-5"
+            className="
+              w-4
+              h-4
+              sm:w-5
+              sm:h-5
+            "
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
