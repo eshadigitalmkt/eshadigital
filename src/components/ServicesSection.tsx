@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { motion, type Variants } from 'framer-motion';
+import AnimatedButton from './AnimatedButton';
 
 // Reusable component for the unique broken-corner icon frame
 const CornerFrame = ({ children }: { children: React.ReactNode }) => (
@@ -38,18 +39,18 @@ const Services = () => {
 
   const servicesList = [
     {
-      title: "MARKETING",
+      title: "DIGITAL\nMARKETING",
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="6" />
           <circle cx="12" cy="12" r="2" fill="currentColor" />
         </svg>
       )
     },
     {
-      title: "VISUAL\nIDENTITY",
+      title: "BRANDING",
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <circle cx="12" cy="12" r="2.5" fill="currentColor" />
         </svg>
       )
@@ -57,7 +58,7 @@ const Services = () => {
     {
       title: "WEBSITE\nCREATION",
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
           <rect x="5" y="5" width="14" height="14" rx="3" />
         </svg>
       )
@@ -65,7 +66,7 @@ const Services = () => {
     {
       title: "WEB APPLICATION\nDEVELOPMENT",
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M8 16L4 12L8 8" />
           <path d="M16 8L20 12L16 16" />
           <path d="M14 4L10 20" />
@@ -73,17 +74,17 @@ const Services = () => {
       )
     },
     {
-      title: "MOTION\nDESIGN",
+      title: "GRAPHIC\nDESIGN",
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round">
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round">
           <polygon points="9 7 17 12 9 17 9 7" />
         </svg>
       )
     },
     {
-      title: "E-LEARNING",
+      title: "MOTION\nDESIGN",
       icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
           <circle cx="12" cy="12" r="7" />
           <line x1="12" y1="5" x2="12" y2="19" />
         </svg>
@@ -167,20 +168,10 @@ const Services = () => {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="flex justify-center"
         >
-          <button className="w-full max-w-4xl bg-white text-black py-5 px-8 flex justify-between items-center group hover:bg-[#fcba00] transition-all duration-300 shadow-lg">
-            <span className="font-tensor font-bold text-base md:text-xl tracking-widest">
-              DISCOVER ALL OUR SERVICES
-            </span>
-            <svg 
-              className="w-6 h-6 transform group-hover:translate-x-2 transition-transform duration-300" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </button>
+          <AnimatedButton
+  text="DISCOVER ALL OUR SERVICES"
+  className="max-w-6xl mx-auto"
+/>
         </motion.div>
 
       </div>

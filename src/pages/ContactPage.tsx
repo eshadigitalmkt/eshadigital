@@ -1,35 +1,175 @@
 import React from 'react';
+import AnimatedText from '../components/AnimatedText';
+import {motion} from 'framer-motion';
 
 const ContactPage: React.FC = () => {
   return (
     <div className="bg-white min-h-screen pb-24 selection:bg-zinc-200">
       
       {/* 1. TYPOGRAPHY HEADER (From previous step) */}
-      <section className="flex flex-col items-center justify-center text-zinc-900 py-20 px-6">
-        <div className="text-center mb-8 relative">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl tracking-widest uppercase font-light leading-tight md:leading-snug">
-            Did we <span className="font-bold">spark</span><br />
-            Your <span className="font-bold">curiosity?</span>
-          </h1>
-        </div>
+      <section className="flex flex-col items-center justify-center text-zinc-900 py-20 px-6 overflow-hidden">
 
-        <div className="relative flex flex-col items-center">
-          <div className="absolute -top-8 -left-10 md:-top-12 md:-left-16 text-zinc-800 rotate-[15deg] scale-75 md:scale-100">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M8 5L4 9l4 4" />
-              <path d="M4 9c6 0 12 4 12 11" />
-            </svg>
-          </div>
-          <div className="text-center">
-            <p className="italic text-lg md:text-xl text-zinc-600 font-serif mb-1">
-              "Ignite your digital presence!"
-            </p>
-            <p className="text-xs md:text-sm tracking-[0.2em] uppercase font-bold text-zinc-800">
-              Esha Digital Marketing
-            </p>
-          </div>
-        </div>
-      </section>
+  {/* ================= TITLE ================= */}
+
+  <div className="text-center mb-8 relative leading-[1] uppercase">
+
+    {/* LINE 1 */}
+    <div className="overflow-hidden pb-3 flex items-center justify-center flex-wrap gap-x-4">
+
+      <AnimatedText
+        text="DID WE"
+        delay={0}
+        className="
+          text-4xl
+          md:text-6xl
+          lg:text-7xl
+          font-light
+          tracking-[0.12em]
+          text-zinc-900
+        "
+      />
+
+      <AnimatedText
+        text="SPARK"
+        delay={0.35}
+        className="
+          text-4xl
+          md:text-6xl
+          lg:text-7xl
+          font-black
+          tracking-tight
+          text-zinc-900
+        "
+      />
+    </div>
+
+    {/* LINE 2 */}
+    <div className="overflow-hidden pb-3 flex items-center justify-center flex-wrap gap-x-4">
+
+      <AnimatedText
+        text="YOUR"
+        delay={0.7}
+        className="
+          text-4xl
+          md:text-6xl
+          lg:text-7xl
+          font-light
+          tracking-[0.12em]
+          text-zinc-900
+        "
+      />
+
+      <AnimatedText
+        text="CURIOSITY?"
+        delay={1}
+        className="
+          text-4xl
+          md:text-6xl
+          lg:text-7xl
+          font-black
+          tracking-tight
+          text-zinc-900
+        "
+      />
+    </div>
+  </div>
+
+  {/* ================= QUOTE ================= */}
+
+  <motion.div
+    initial={{
+      opacity: 0,
+      y: 30,
+    }}
+    whileInView={{
+      opacity: 1,
+      y: 0,
+    }}
+    viewport={{ once: true }}
+    transition={{
+      delay: 1.3,
+      duration: 1,
+      ease: "easeOut",
+    }}
+    className="relative flex flex-col items-center mt-4"
+  >
+
+    {/* ARROW */}
+
+    <motion.div
+      initial={{
+        opacity: 0,
+        rotate: 25,
+        x: -20,
+      }}
+      whileInView={{
+        opacity: 1,
+        rotate: 15,
+        x: 0,
+      }}
+      viewport={{ once: true }}
+      transition={{
+        delay: 1.4,
+        duration: 1,
+      }}
+      className="
+        absolute
+        -top-8
+        -left-10
+        md:-top-12
+        md:-left-16
+        text-zinc-800
+        scale-75
+        md:scale-100
+      "
+    >
+      <svg
+        width="48"
+        height="48"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M8 5L4 9l4 4" />
+        <path d="M4 9c6 0 12 4 12 11" />
+      </svg>
+    </motion.div>
+
+    {/* TEXT */}
+
+    <div className="text-center">
+
+      <p
+        className="
+          italic
+          text-lg
+          md:text-xl
+          text-zinc-600
+          font-serif
+          mb-1
+        "
+      >
+        "Ignite your digital presence!"
+      </p>
+
+      <p
+        className="
+          text-xs
+          md:text-sm
+          tracking-[0.2em]
+          uppercase
+          font-bold
+          text-zinc-800
+        "
+      >
+        ESHA Digital Marketing
+      </p>
+    </div>
+  </motion.div>
+</section>
 
       {/* 2. CONTACT DETAILS & FORM SECTION */}
       <section className="max-w-6xl mx-auto px-6 mt-12">
@@ -50,7 +190,7 @@ const ContactPage: React.FC = () => {
                   <svg className="w-8 h-8 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                   </svg>
-                  <p className="text-xl font-light tracking-wide">hello@eshadigital.in</p>
+                  <p className="text-xl font-light tracking-wide">info@eshadigital.com</p>
                 </div>
 
                 {/* Address */}

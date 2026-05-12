@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 
 // Pages
 import Home from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
 
@@ -18,6 +19,7 @@ const App = () => {
       {/* Routes handle which page content to show based on the URL */}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} /> 
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>

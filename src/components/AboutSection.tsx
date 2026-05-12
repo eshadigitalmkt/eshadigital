@@ -1,118 +1,236 @@
 "use client";
-import React from 'react';
-import { motion, type Variants } from 'framer-motion';
+
+import React from "react";
+import { motion, type Variants } from "framer-motion";
+
+// import AnimatedButton from "./AnimatedButton";
 
 const AboutSection: React.FC = () => {
-  // Framer Motion variants for smooth scrolling animations
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.2, duration: 0.6 }
-    }
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
-    <section className="w-full bg-white py-20 px-6 sm:px-8 lg:px-16 overflow-hidden">
+    <section className="w-full bg-[#f5f5f3] py-20 px-6 lg:px-16 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-          
-          {/* LEFT SIDE: Image */}
-          <motion.div 
-            initial={{ opacity: 0, x: -40 }}
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
+
+          {/* LEFT IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full h-full min-h-[350px] lg:min-h-[500px] relative rounded-sm overflow-hidden bg-gray-100"
+            viewport={{ once: true }}
+            transition={{ duration: 0.9 }}
+            className="relative overflow-hidden"
           >
-            {/* Replace this with your actual team image path */}
-            <img 
-              src="/about-team.jpg" 
-              alt="The ESHA Agency Team" 
-              className="absolute inset-0 w-full h-full object-cover"
+            <img
+              src="/about-team.jpg"
+              alt="Agency Team"
+              className="w-full h-full object-cover"
             />
           </motion.div>
 
-          {/* RIGHT SIDE: Content */}
-          <motion.div 
+          {/* RIGHT CONTENT */}
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="flex flex-col justify-center py-8"
+            viewport={{ once: true }}
+            className="flex flex-col justify-center"
           >
-            
-            {/* Quote with Hand-drawn Arrow */}
-            <motion.div variants={itemVariants} className="flex items-start gap-4 mb-10">
-              <svg 
-                className="w-8 h-8 text-[#192747] mt-1 opacity-80" 
-                viewBox="0 0 40 40" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="1.5" 
-                strokeLinecap="round" 
+            {/* QUOTE */}
+            <motion.div
+              variants={itemVariants}
+              className="flex items-start gap-5 mb-10"
+            >
+              <motion.svg
+                whileHover={{
+                  rotate: -8,
+                  scale: 1.08,
+                }}
+                transition={{ duration: 0.4 }}
+                className="w-10 h-10 text-black mt-1"
+                viewBox="0 0 40 40"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path d="M35 10 C 20 10, 10 15, 10 30" />
-                <path d="M5 25 L 10 30 L 15 25" />
-              </svg>
-              <div className="italic text-[#192747]/70 font-helvetica text-base md:text-lg leading-relaxed">
-                "Small but strong."<br />
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 1.2 }}
+                  d="M35 10 C 20 10, 10 15, 10 30"
+                />
+
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 1.2, delay: 0.2 }}
+                  d="M5 25 L 10 30 L 15 25"
+                />
+              </motion.svg>
+
+              <div className="italic text-black/70 text-[22px] leading-relaxed">
+                "Small but strong."
+                <br />
                 The Magpie Who Sings
               </div>
             </motion.div>
 
-            {/* Main Heading */}
+            {/* HEADING */}
             <motion.div variants={itemVariants} className="mb-8">
-              <h2 className="text-[#192747] font-tensor uppercase flex flex-col">
-                <span className="text-2xl sm:text-3xl lg:text-[32px] font-light tracking-wide mb-2">
+              <h2 className="uppercase text-black">
+                <span className="block font-light text-[32px] tracking-wide leading-tight">
                   A TOURAINE AGENCY ON A
                 </span>
-                <span className="text-5xl sm:text-6xl lg:text-[72px] font-bold tracking-tight leading-none">
+
+                <span className="block font-bold text-[72px] leading-[0.95] tracking-tight">
                   HUMAN SCALE
                 </span>
               </h2>
             </motion.div>
 
-            {/* Description Paragraph */}
-            <motion.p 
+            {/* DESCRIPTION */}
+            <motion.p
               variants={itemVariants}
-              className="text-lg sm:text-xl text-[#192747]/80 font-helvetica leading-[1.7] mb-10 max-w-xl"
+              className="text-[20px] leading-[1.65] text-black/80 max-w-2xl mb-12"
             >
-              For almost 15 years, we have been passionately combining{' '}
-              <strong className="text-[#192747] font-bold">creativity, development, strategy</strong> 
-              {' '}and experience to offer our customers innovative{' '}
-              <strong className="text-[#192747] font-bold">communication</strong> solutions.
-              <br /><br />
-              Our mission: to create a strong identity and guarantee increased visibility of your brand in its market.
+              For almost 3 years, we have been passionately combining{" "}
+              <strong className="font-bold text-black">
+                creativity, development, strategy
+              </strong>{" "}
+              and experience to offer our customers innovative{" "}
+              <strong className="font-bold text-black">
+                communication
+              </strong>{" "}
+              solutions.
+              <br />
+              
+              Our mission: to create a strong identity and guarantee increased
+              visibility of your brand in its market.
             </motion.p>
 
-            {/* Call To Action Link */}
-            <motion.div variants={itemVariants}>
-              <a 
-                href="#" 
-                className="group inline-flex items-center text-[#192747] hover:text-[#fcba00] transition-colors duration-300 font-tensor font-bold text-lg sm:text-xl tracking-wide"
-              >
-                Discover The Agency ESHA
-                <svg 
-                  className="w-6 h-6 ml-4 transform group-hover:translate-x-2 transition-transform duration-300" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  viewBox="0 0 24 24"
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
-            </motion.div>
+            {/* CTA */}
+<motion.a
+  variants={itemVariants}
+  href="#"
+  initial="rest"
+  whileHover="hover"
+  animate="rest"
+  className="group inline-flex items-center gap-4 w-fit mt-2"
+>
+  {/* TEXT */}
+  <div className="relative overflow-hidden h-[34px]">
+    {/* TOP TEXT */}
+    <motion.span
+      variants={{
+        rest: { y: 0 },
+        hover: { y: -40 },
+      }}
+      transition={{
+        duration: 0.25,
+        ease: [0.215, 0.61, 0.355, 1],
+      }}
+      className="
+        block
+        text-[26px]
+        font-bold
+        leading-[33.8px]
+        text-black
+        uppercase
+        tracking-wide
+      "
+    >
+      Discover The Agency ESHA
+    </motion.span>
 
+    {/* BOTTOM TEXT */}
+    <motion.span
+      variants={{
+        rest: { y: 40 },
+        hover: { y: 0 },
+      }}
+      transition={{
+        duration: 0.25,
+        ease: [0.215, 0.61, 0.355, 1],
+      }}
+      className="
+        absolute
+        left-0
+        top-0
+        block
+        text-[26px]
+        font-bold
+        leading-[33.8px]
+        text-black
+        uppercase
+        tracking-wide
+      "
+    >
+      Discover The Agency ESHA
+    </motion.span>
+  </div>
+
+  {/* ARROW */}
+  <motion.div
+    variants={{
+      rest: { x: 0 },
+      hover: { x: 8 },
+    }}
+    transition={{
+      duration: 0.3,
+    }}
+    className="flex items-center justify-center"
+  >
+    <motion.svg
+      width="38"
+      height="38"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="text-black"
+    >
+      <motion.path
+        variants={{
+          rest: { d: "M5 12H19" },
+          hover: { d: "M3 12H19" },
+        }}
+        transition={{ duration: 0.3 }}
+      />
+
+      <motion.path
+        variants={{
+          rest: { d: "M12 5L19 12L12 19" },
+          hover: { d: "M10 4L20 12L10 20" },
+        }}
+        transition={{ duration: 0.3 }}
+      />
+    </motion.svg>
+  </motion.div>
+</motion.a>
           </motion.div>
         </div>
       </div>
