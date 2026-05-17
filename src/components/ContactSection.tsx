@@ -66,12 +66,12 @@ const ContactSection: React.FC = () => {
 
   return (
     <>
-      {/* Contact Section (Black Background) */}
-      <section className="relative w-full bg-black text-white pt-24 pb-12 px-6 sm:px-8 lg:px-16 overflow-hidden">
+      {/* Contact Section (Blue Background & White Text) */}
+      <section className="relative w-full bg-[#192747] text-white pt-24 pb-24 px-6 sm:px-8 lg:px-16 overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             
-            {/* LEFT COLUMN: Text & Socials (Made more compact) */}
+            {/* LEFT COLUMN: Text & Socials */}
             <motion.div 
               variants={containerVariants}
               initial="hidden"
@@ -80,15 +80,13 @@ const ContactSection: React.FC = () => {
               className="flex flex-col"
             >
               <motion.h2 variants={itemVariants} className="text-4xl sm:text-5xl md:text-6xl font-tensor flex flex-col tracking-tight mb-4">
-                <span className="font-light text-gray-200">LET'S BOOK</span>
+                <span className="font-light text-white/70">LET'S BOOK</span>
                 <span className="font-bold">AN APPOINTMENT</span>
               </motion.h2>
 
-              <motion.p variants={itemVariants} className="text-base sm:text-lg font-helvetica text-gray-200 max-w-md leading-relaxed mb-10">
+              <motion.p variants={itemVariants} className="text-base sm:text-lg font-helvetica text-white/80 max-w-md leading-relaxed mb-10">
                 If you've scrolled this far, you must be interested. Quickly fill out this form so we can get in touch!
               </motion.p>
-
-             
             </motion.div>
 
             {/* RIGHT COLUMN: Form with Validation */}
@@ -109,11 +107,11 @@ const ContactSection: React.FC = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="FIRST NAME / LAST NAME*" 
-                    className="bg-transparent border-b border-white py-2 text-white placeholder-white focus:outline-none focus:border-[#fcba00] transition-colors" 
+                    className="bg-transparent border-b border-white/30 py-2 text-white placeholder-white/50 focus:outline-none focus:border-[#fcba00] transition-colors" 
                   />
                   {/* Error Message renders conditionally */}
                   {errors.name && (
-                    <span className="text-[#fcba00]/80 text-xs font-helvetica mt-1 tracking-normal">
+                    <span className="text-[#fcba00] text-xs font-helvetica mt-1 tracking-normal font-medium">
                       Please fill out this field.
                     </span>
                   )}
@@ -128,10 +126,10 @@ const ContactSection: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="EMAIL*" 
-                      className="bg-transparent border-b border-white py-2 text-white placeholder-white focus:outline-none focus:border-[#fcba00] transition-colors" 
+                      className="bg-transparent border-b border-white/30 py-2 text-white placeholder-white/50 focus:outline-none focus:border-[#fcba00] transition-colors" 
                     />
                     {errors.email && (
-                      <span className="text-[#fcba00]/80 text-xs font-helvetica mt-1 tracking-normal">
+                      <span className="text-[#fcba00] text-xs font-helvetica mt-1 tracking-normal font-medium">
                         Please fill out this field.
                       </span>
                     )}
@@ -143,17 +141,17 @@ const ContactSection: React.FC = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="PHONE*" 
-                      className="bg-transparent border-b border-white py-2 text-white placeholder-white focus:outline-none focus:border-[#fcba00] transition-colors" 
+                      className="bg-transparent border-b border-white/30 py-2 text-white placeholder-white/50 focus:outline-none focus:border-[#fcba00] transition-colors" 
                     />
                     {errors.phone && (
-                      <span className="text-[#fcba00]/80 text-xs font-helvetica mt-1 tracking-normal">
+                      <span className="text-[#fcba00] text-xs font-helvetica mt-1 tracking-normal font-medium">
                         Please fill out this field.
                       </span>
                     )}
                   </div>
                 </motion.div>
 
-                {/* Message (Optional field, no validation error needed) */}
+                {/* Message (Optional field) */}
                 <motion.div variants={itemVariants} className="flex flex-col w-full mt-2">
                   <textarea 
                     name="message"
@@ -161,13 +159,16 @@ const ContactSection: React.FC = () => {
                     onChange={handleChange}
                     rows={3} 
                     placeholder="MESSAGE" 
-                    className="bg-transparent border-b border-white py-2 text-white placeholder-white focus:outline-none focus:border-[#fcba00] transition-colors resize-none"
+                    className="bg-transparent border-b border-white/30 py-2 text-white placeholder-white/50 focus:outline-none focus:border-[#fcba00] transition-colors resize-none"
                   ></textarea>
                 </motion.div>
 
                 {/* Submit Button */}
                 <motion.div variants={itemVariants} className="mt-4">
-                  <button type="submit" className="w-full bg-white text-black py-4 font-bold text-lg hover:bg-[#fcba00] hover:text-[#192747] transition-all duration-300 tracking-widest cursor-pointer">
+                  <button 
+                    type="submit" 
+                    className="w-full bg-white text-[#192747] py-4 font-bold text-lg hover:bg-[#fcba00] hover:text-[#192747] transition-all duration-300 tracking-widest cursor-pointer"
+                  >
                     SEND
                   </button>
                 </motion.div>
@@ -177,8 +178,6 @@ const ContactSection: React.FC = () => {
           </div>
         </div>
       </section>
-
-      
     </>
   );
 };

@@ -114,7 +114,7 @@ const TestimonialSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-[#f5f5f3] py-24 px-6 sm:px-8 lg:px-16 overflow-hidden">
+    <section className="w-full bg-[#f6f7fb] py-24 px-6 sm:px-8 lg:px-16 overflow-hidden">
       <div className="max-w-[1600px] mx-auto">
 
         {/* ---------------- HEADER ---------------- */}
@@ -127,33 +127,11 @@ const TestimonialSection: React.FC = () => {
           className="mb-20"
         >
           {/* SMALL QUOTE */}
-          <motion.div
-            variants={itemVariants}
-            className="flex items-start gap-4 mb-10"
-          >
-            <svg
-              className="w-10 h-10 text-black mt-1"
-              viewBox="0 0 40 40"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M30 10 C 15 10, 10 20, 10 35" />
-              <path d="M5 30 L 10 35 L 15 30" />
-            </svg>
-
-            <div className="italic text-black/70 text-[18px] leading-relaxed">
-              "Real experiences. Real trust."
-              <br />
-              Our Hyderabad Clients
-            </div>
-          </motion.div>
+          
 
           {/* TITLE */}
           <motion.div variants={itemVariants} className="mb-8">
-            <h2 className="uppercase text-black">
+            <h2 className="uppercase text-[#192747]">
               <span className="block text-[24px] sm:text-[30px] font-light tracking-[0.2em] mb-3">
                 TESTIMONIALS
               </span>
@@ -167,7 +145,7 @@ const TestimonialSection: React.FC = () => {
           {/* DESCRIPTION */}
           <motion.p
             variants={itemVariants}
-            className="text-[17px] sm:text-[19px] leading-[1.8] text-black/70 max-w-4xl"
+            className="text-[17px] sm:text-[19px] leading-[1.8] text-[#192747]/70 max-w-4xl font-light"
           >
             Every successful collaboration tells a story. Here’s what our
             clients across Hyderabad say about working with ESHA and the impact
@@ -221,8 +199,10 @@ const TestimonialSection: React.FC = () => {
                 w-[90vw]
                 sm:w-[760px]
                 min-h-[240px]
-                rounded-[6px]
+                rounded-[2rem]
                 bg-white
+                border
+                border-[#192747]/5
                 px-8
                 py-7
                 sm:px-10
@@ -236,7 +216,7 @@ const TestimonialSection: React.FC = () => {
                 justify-between
               "
               style={{
-                boxShadow: "0px 4px 18px rgba(0,0,0,0.08)",
+                boxShadow: "0px 20px 50px rgba(25, 39, 71, 0.04)",
               }}
             >
               {/* CONTENT */}
@@ -246,8 +226,8 @@ const TestimonialSection: React.FC = () => {
                   className="
                     text-[20px]
                     sm:text-[22px]
-                    font-semibold
-                    text-black
+                    font-bold
+                    text-[#192747]
                     leading-tight
                     tracking-tight
                     mb-1
@@ -264,10 +244,11 @@ const TestimonialSection: React.FC = () => {
                     font-light
                     text-[15px]
                     sm:text-[16px]
-                    text-black/60
+                    text-[#192747]/60
                     mb-5
                     leading-relaxed
                     pointer-events-none
+                    font-serif
                   "
                 >
                   {testimonial.role}
@@ -279,9 +260,10 @@ const TestimonialSection: React.FC = () => {
                     text-[16px]
                     sm:text-[17px]
                     leading-[1.8]
-                    text-black/80
+                    text-[#192747]/80
                     max-w-[95%]
                     pointer-events-none
+                    font-light
                   "
                 >
                   "{testimonial.quote}"
@@ -289,7 +271,7 @@ const TestimonialSection: React.FC = () => {
               </div>
 
               {/* BOTTOM LINE */}
-              <div className="mt-6 w-full h-[1px] bg-black/10" />
+              <div className="mt-6 w-full h-[1px] bg-[#192747]/10" />
             </motion.div>
           ))}
         </motion.div>

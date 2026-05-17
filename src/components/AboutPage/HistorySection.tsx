@@ -31,7 +31,7 @@ const HistorySection = () => {
   };
 
   return (
-    <section className="w-full bg-[#f5f5f3] py-24 px-6 sm:px-10 lg:px-16 overflow-hidden">
+    <section className="w-full bg-[#f6f7fb] py-24 px-6 sm:px-10 lg:px-16 overflow-hidden">
       <div className="max-w-[1600px] mx-auto">
 
         <motion.div
@@ -39,7 +39,7 @@ const HistorySection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-20"
+          className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-12 lg:gap-20"
         >
 
           {/* ================= LEFT SIDE ================= */}
@@ -52,11 +52,11 @@ const HistorySection = () => {
               <span
                 className="
                   block
-                  text-[56px]
+                  text-[48px]
                   sm:text-[70px]
                   font-light
                   tracking-tight
-                  text-black
+                  text-[#192747]
                 "
               >
                 OUR
@@ -65,12 +65,12 @@ const HistorySection = () => {
               <span
                 className="
                   block
-                  text-[76px]
+                  text-[64px]
                   sm:text-[92px]
                   lg:text-[105px]
                   font-black
                   tracking-[-0.04em]
-                  text-black
+                  text-[#192747]
                   -mt-1
                 "
               >
@@ -78,37 +78,6 @@ const HistorySection = () => {
               </span>
             </div>
 
-            {/* QUOTE */}
-            <div className="flex items-start gap-5">
-
-              {/* HAND DRAWN ARROW */}
-              <svg
-                className="w-10 h-10 text-black mt-1"
-                viewBox="0 0 40 40"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M30 30 C 18 30, 10 20, 10 5" />
-                <path d="M5 15 L 10 5 L 18 12" />
-              </svg>
-
-              {/* TEXT */}
-              <div
-                className="
-                  italic
-                  text-black/70
-                  text-[22px]
-                  leading-[1.4]
-                "
-              >
-                "Creativity drives growth."
-                <br />
-                ESHA Agency
-              </div>
-            </div>
           </motion.div>
 
           {/* ================= RIGHT SIDE ================= */}
@@ -116,20 +85,20 @@ const HistorySection = () => {
           <motion.div
             variants={itemVariants}
             className="
-              text-black/85
-              text-[20px]
+              text-[#192747]/85
+              text-[18px]
               sm:text-[22px]
               leading-[1.55]
               tracking-[0.01em]
             "
           >
             {/* PARAGRAPH 1 */}
-            <p className="mb-12">
+            <p className="mb-10 lg:mb-12 font-light">
               ESHA was built from the shared vision of passionate creators,
               strategists, and developers who wanted to redefine how brands
               connect with people in the digital world. What started as a small
               creative collaboration has evolved into a modern{" "}
-              <strong className="font-bold text-black">
+              <strong className="font-bold text-[#192747]">
                 digital marketing and development agency
               </strong>{" "}
               focused on innovation, storytelling, and measurable business
@@ -137,22 +106,22 @@ const HistorySection = () => {
             </p>
 
             {/* PARAGRAPH 2 */}
-            <p className="mb-12">
+            <p className="mb-10 lg:mb-12 font-light">
               Our agency combines{" "}
-              <strong className="font-bold text-black">
+              <strong className="font-bold text-[#192747]">
                 branding, web development, social media marketing
               </strong>{" "}
               and creative strategy to help businesses stand out in today’s
               competitive digital landscape. We believe successful brands are
               built through{" "}
-              <strong className="font-bold text-black">
+              <strong className="font-bold text-[#192747]">
                 creativity, consistency, and meaningful experiences
               </strong>
               .
             </p>
 
             {/* PARAGRAPH 3 */}
-            <p className="mb-20">
+            <p className="mb-16 lg:mb-20 font-light">
               Every project we create is driven by collaboration, trust, and a
               deep understanding of our clients’ ambitions. Our mission is to
               craft modern digital experiences that inspire audiences and create
@@ -161,7 +130,7 @@ const HistorySection = () => {
 
             {/* CTA */}
             <motion.a
-              href="#"
+              href="/contact"
               initial="rest"
               whileHover="hover"
               animate="rest"
@@ -169,19 +138,19 @@ const HistorySection = () => {
                 group
                 inline-flex
                 items-center
-                gap-5
+                gap-4
                 cursor-pointer
                 w-fit
               "
             >
               {/* TEXT */}
-              <div className="relative overflow-hidden h-[40px]">
+              <div className="relative overflow-hidden h-[28px] sm:h-[34px] md:h-[40px]">
 
                 {/* TOP TEXT */}
                 <motion.span
                   variants={{
                     rest: { y: 0 },
-                    hover: { y: -45 },
+                    hover: { y: "-100%" },
                   }}
                   transition={{
                     duration: 0.25,
@@ -189,10 +158,14 @@ const HistorySection = () => {
                   }}
                   className="
                     block
-                    text-[28px]
-                    font-semibold
-                    text-black
+                    text-[18px] sm:text-[22px] md:text-[28px]
+                    font-bold
+                    text-[#192747]
+                    group-hover:text-[#fcba00]
                     leading-tight
+                    transition-colors
+                    duration-200
+                    whitespace-nowrap
                   "
                 >
                   Let’s Build Your Brand
@@ -201,7 +174,7 @@ const HistorySection = () => {
                 {/* BOTTOM TEXT */}
                 <motion.span
                   variants={{
-                    rest: { y: 45 },
+                    rest: { y: "100%" },
                     hover: { y: 0 },
                   }}
                   transition={{
@@ -213,10 +186,11 @@ const HistorySection = () => {
                     left-0
                     top-0
                     block
-                    text-[28px]
-                    font-semibold
-                    text-black
+                    text-[18px] sm:text-[22px] md:text-[28px]
+                    font-bold
+                    text-[#fcba00]
                     leading-tight
+                    whitespace-nowrap
                   "
                 >
                   Let’s Build Your Brand
@@ -234,15 +208,13 @@ const HistorySection = () => {
                 }}
               >
                 <svg
-                  width="42"
-                  height="42"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="1.8"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="text-black"
+                  className="w-[32px] h-[32px] md:w-[42px] md:h-[42px] text-[#192747] group-hover:text-[#fcba00] transition-colors duration-200"
                 >
                   <motion.path
                     variants={{

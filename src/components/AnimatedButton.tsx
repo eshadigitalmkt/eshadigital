@@ -51,9 +51,10 @@ export default function AnimatedButton({
         {/* ================= TEXT ================= */}
 
         <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-
-          <div className="flex items-center justify-center flex-wrap px-10 sm:px-12">
-
+          
+          {/* FIX: Removed 'flex-wrap' and changed mobile padding to px-4 so it fits on small screens */}
+          <div className="flex items-center justify-center px-4 sm:px-12">
+            
             {letters.map((char, index) => (
               <div
                 key={index}
@@ -81,7 +82,7 @@ export default function AnimatedButton({
                   className="
                     block
 
-                    text-[14px]
+                    text-[12px]
                     sm:text-[20px]
                     md:text-[26px]
 
@@ -124,7 +125,7 @@ export default function AnimatedButton({
 
                     block
 
-                    text-[14px]
+                    text-[12px]
                     sm:text-[20px]
                     md:text-[26px]
 
