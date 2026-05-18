@@ -2,6 +2,11 @@
 
 import React from "react";
 import { motion, type Variants } from "framer-motion";
+import BrandImage from "../assets/Brand Identity.jpg"
+import DigitalCampaign from "../assets/Digital Campaign.jpg"
+import EditorialDesign from "../assets/Editorial Design.jpg"
+import WedDevImage from "../assets/Web-development.jpg"
+import MobileImage from "../assets/Mobile Mockup.jpg"
 
 const OurWorkSection: React.FC = () => {
   /* ---------------- ANIMATIONS ---------------- */
@@ -68,7 +73,7 @@ const OurWorkSection: React.FC = () => {
               className="relative group rounded-xl md:rounded-2xl overflow-hidden h-[400px] md:h-[450px] shadow-sm cursor-pointer"
             >
               <img
-                src="https://images.unsplash.com/photo-1629881881682-127e7a83d789?q=80&w=800&auto=format&fit=crop"
+                src={BrandImage}
                 alt="Brand Identity Project"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -87,7 +92,7 @@ const OurWorkSection: React.FC = () => {
               className="relative group rounded-xl md:rounded-2xl overflow-hidden h-[200px] md:h-[250px] shadow-sm cursor-pointer"
             >
               <img
-                src="https://images.unsplash.com/photo-1542744094-24638eff58bf?q=80&w=800&auto=format&fit=crop"
+                src={DigitalCampaign}
                 alt="Digital Campaign"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -108,12 +113,12 @@ const OurWorkSection: React.FC = () => {
             {/* Massive Center Mockup (Brochure) */}
             <motion.div 
               variants={itemVariants} 
-              className="relative group rounded-xl md:rounded-2xl overflow-hidden h-[400px] md:h-[724px] shadow-sm border border-[#192747]/5 w-full bg-white flex-1 cursor-pointer"
+              className="relative group rounded-xl md:rounded-2xl overflow-hidden h-[300px] md:h-[524px] shadow-sm border border-[#192747]/5 w-full bg-white flex-1 cursor-pointer"
             >
               <img
-                src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=1200&auto=format&fit=crop"
+                src={EditorialDesign}
                 alt="Brochure Design"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-[#192747]/0 group-hover:bg-[#192747]/30 transition-colors duration-500" />
               
@@ -134,7 +139,7 @@ const OurWorkSection: React.FC = () => {
               className="relative group rounded-xl md:rounded-2xl overflow-hidden h-[300px] md:h-[350px] shadow-sm cursor-pointer"
             >
               <img
-                src="https://images.unsplash.com/photo-1507238692062-7140f7d54c79?q=80&w=800&auto=format&fit=crop"
+                src={WedDevImage}
                 alt="Web Development Dashboard"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -152,7 +157,7 @@ const OurWorkSection: React.FC = () => {
               className="relative group rounded-xl md:rounded-2xl overflow-hidden h-[300px] md:h-[350px] shadow-sm cursor-pointer"
             >
               <img
-                src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=800&auto=format&fit=crop"
+                src={MobileImage}
                 alt="Social Media App"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />

@@ -1,3 +1,10 @@
+
+import WebDevImage from "../assets/web-development-service.jpg"
+import SMMImage from "../assets/smm1.jpg"
+import BrandIdentity from "../assets/Brand-Identity.jpg"
+import SEOImage from "../assets/seo.jpg"
+import PPCImage from "../assets/AD-Campaign.jpg"
+
 export interface Platform {
   name: string;
   description: string;
@@ -59,7 +66,7 @@ export const servicesData: ServiceDetail[] = [
   {
     slug: "brand-identity",
     title: "Brand Identity",
-    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1400&auto=format&fit=crop",
+    image: BrandIdentity,
     intro: [
       "Your brand is much more than just a logo; it is the visual and emotional language that connects you with your audience. A strong brand identity sets you apart from competitors and builds lasting trust.",
       "We create memorable logos, comprehensive visual identities, and cohesive brand systems that define exactly how your business is seen and remembered across all touchpoints.",
@@ -131,7 +138,7 @@ export const servicesData: ServiceDetail[] = [
   {
     slug: "social-media-marketing",
     title: "Social Media Marketing",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1400&auto=format&fit=crop",
+    image: SMMImage,
     intro: [
       "Bhai, social media is not just posting photos — it's where your business gets seen, loved, and talked about! Whether you're a small shop in Hyderabad or a big brand, social media is your biggest stage today.",
       "We help your business grow on social media with smart planning, eye-catching content, and ads that actually work. No jugaad, just real results that you can see and measure.",
@@ -213,7 +220,7 @@ export const servicesData: ServiceDetail[] = [
   {
     slug: "web-development",
     title: "Web Development",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop",
+    image: WebDevImage,
     intro: [
       "Your website is the digital storefront of your business. It runs 24/7, serving as the primary touchpoint for potential customers exploring your products or services.",
       "We design fast, modern, and conversion-focused websites that not only showcase your brand professionally but also provide seamless user experiences across all devices.",
@@ -357,7 +364,7 @@ export const servicesData: ServiceDetail[] = [
   {
     slug: "search-engine-optimization",
     title: "Search Engine Optimization",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1400&auto=format&fit=crop",
+    image: SEOImage,
     intro: [
       "Having a beautiful website is only half the battle; ensuring your target audience can actually find it is where Search Engine Optimization (SEO) comes in.",
       "We optimize your website to rank higher on search engines like Google, helping you attract consistent, long-term organic traffic without paying for every click.",
@@ -429,7 +436,7 @@ export const servicesData: ServiceDetail[] = [
   {
     slug: "paid-advertising",
     title: "Paid Advertising / PPC",
-    image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=1400&auto=format&fit=crop",
+    image: PPCImage,
     intro: [
       "When you need immediate visibility and rapid lead generation, Paid Advertising is the most effective lever you can pull. It places your brand at the very top of the digital food chain.",
       "We run high-performing Google and Meta ad campaigns focused strictly on leads, sales, and measurable business growth. We treat your ad spend like our own.",

@@ -6,6 +6,11 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async"; // <-- Imported Helmet for SEO
 import ContactSection from "../components/ContactSection";
 import AnimatedText from "../components/AnimatedText"; // <-- Added missing import
+import WebDevImage from "../assets/web-development-service.jpg"
+import SMMImage from "../assets/smm1.jpg"
+import BrandIdentity from "../assets/Brand-Identity.jpg"
+import SEOImage from "../assets/seo.jpg"
+import PPCImage from "../assets/AD-Campaign.jpg"
 
 const services = [
   {
@@ -14,8 +19,7 @@ const services = [
     slug: "brand-identity",
     description:
       "We create memorable logos, visual identities, and brand systems that define how your business is seen and remembered.",
-    image:
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1400&auto=format&fit=crop",
+    image:BrandIdentity,
   },
   {
     step: "02",
@@ -23,8 +27,7 @@ const services = [
     slug: "social-media-marketing",
     description:
       "We build your online presence with engaging content, creative campaigns, and strategies that grow your audience.",
-    image:
-      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1400&auto=format&fit=crop",
+    image:SMMImage,
   },
   {
     step: "03",
@@ -32,8 +35,7 @@ const services = [
     slug: "web-development",
     description:
       "We design fast, modern, and conversion-focused websites that showcase your brand professionally.",
-    image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop",
+    image:WebDevImage,
   },
   {
     step: "04",
@@ -50,8 +52,7 @@ const services = [
     slug: "search-engine-optimization",
     description:
       "We optimize your website to rank higher on search engines and attract long-term organic traffic.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1400&auto=format&fit=crop",
+    image:SEOImage,
   },
   {
     step: "06",
@@ -59,8 +60,7 @@ const services = [
     slug: "paid-advertising",
     description:
       "We run high-performing Google and Meta ad campaigns focused on leads, sales, and business growth.",
-    image:
-      "https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=1400&auto=format&fit=crop",
+    image:PPCImage,
   },
 ];
 

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion, type Variants } from "framer-motion";
+import AboutImage from "../assets/Aboutimage.webp"
 
 const AboutSection: React.FC = () => {
   const containerVariants: Variants = {
@@ -42,10 +43,10 @@ const AboutSection: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9 }}
-            className="w-full relative overflow-hidden rounded-[2rem] border border-[#192747]/10 shadow-[0_20px_50px_rgba(25,39,71,0.05)] aspect-[4/5] sm:aspect-square lg:aspect-[4/5]"
+            className="w-full relative overflow-hidden rounded-[2rem] border border-[#192747]/10 shadow-[0_20px_50px_rgba(25,39,71,0.05)] aspect-[4/4] sm:aspect-square lg:aspect-[4/4]"
           >
             <img
-              src="/about-team.jpg"
+              src={AboutImage}
               alt="Agency Team"
               className="w-full h-full object-cover grayscale opacity-90 hover:grayscale-0 transition-all duration-700 ease-in-out"
             />

@@ -7,6 +7,9 @@ import { Helmet } from "react-helmet-async"; // <-- Imported Helmet for SEO
 import HistorySection from "../components/AboutPage/HistorySection";
 import ContactSection from "../components/ContactSection";
 import AnimatedText from "../components/AnimatedText";
+import SubhashImage from "../assets/Subhash image.jpg"
+import LathaImage from "../assets/Latha mam image.jpg"
+import SaiRamImage from "../assets/Sai Ram image.jpg"
 
 /* =========================================================
    HERO SECTION
@@ -150,28 +153,25 @@ const HeroSection: React.FC = () => {
 
 const teamMembers = [
   {
-    name: "François COUSIN",
+    name: "Subhash",
+    role: "HEAD OF MARKETING",
+
+    image: SubhashImage,
+
+  },
+  {
+    name: "Latha",
+    role: "HEAD OF CLIENTS",
+
+    image: LathaImage,
+
+  },
+  {
+    name: "Sai Ram",
     role: "HEAD OF DIGITAL MARKETING",
-    bio: "Driving brand growth and online presence through strategic campaigns.",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600",
-    socials: ["instagram", "behance", "linkedin"],
-  },
-  {
-    name: "Sarah COSTA",
-    role: "LEAD GRAPHIC DESIGNER",
-    bio: "Crafting visually stunning identities and creative brand assets.",
-    image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600",
-    socials: ["linkedin"],
-  },
-  {
-    name: "Pierre GUIHÉNEUF",
-    role: "HEAD OF WEB DEVELOPMENT",
-    bio: "Building robust, scalable, and responsive digital platforms.",
-    image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600",
-    socials: ["linkedin"],
+
+    image: SaiRamImage,
+
   },
 ];
 
@@ -335,23 +335,24 @@ const TeamSection: React.FC = () => {
               >
                 {/* IMAGE */}
                 <img
-                  src={member.image}
-                  alt={member.name}
-                  className="
-                    absolute
-                    inset-0
-                    w-full
-                    h-full
-                    object-cover
-                    grayscale
-                    opacity-70
-                    group-hover:grayscale-0
-                    group-hover:opacity-100
-                    transition-all
-                    duration-700
-                    ease-in-out
-                  "
-                />
+  src={member.image}
+  alt={member.name}
+  className="
+    absolute
+    inset-0
+    w-full
+    h-full
+    object-cover
+    -translate-y-16
+    grayscale
+    opacity-70
+    group-hover:grayscale-0
+    group-hover:opacity-100
+    transition-all
+    duration-700
+    ease-in-out
+  "
+/>
 
                 {/* OVERLAY */}
                 <div
@@ -550,12 +551,12 @@ export default function AboutPage() {
         {/* Primary Meta Tags */}
         <title>About Us | ESHA Digital - Creative Agency in Hyderabad</title>
         <meta name="title" content="About Us | ESHA Digital - Creative Agency in Hyderabad" />
-        <meta 
-          name="description" 
-          content="Learn about ESHA Digital's story, our reason for being, and meet our committed team of creative marketing and web development experts." 
+        <meta
+          name="description"
+          content="Learn about ESHA Digital's story, our reason for being, and meet our committed team of creative marketing and web development experts."
         />
         <meta name="keywords" content="About ESHA Digital, Digital Marketing Team Hyderabad, Web Development Experts, Creative Agency Story, Branding Specialists" />
-        
+
         {/* Canonical URL */}
         <link rel="canonical" href="https://yourwebsite.com/about" />
 
