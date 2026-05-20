@@ -90,7 +90,7 @@ const AboutSection: React.FC = () => {
               <br className="hidden md:block" />
               <br className="hidden md:block" />
               <span className="block mt-4 md:mt-0">
-                Our mission: to create a strong identity and guarantee increased
+                Our Mission: To create a strong identity and guarantee increased
                 visibility of your brand in its market.
               </span>
             </motion.p>

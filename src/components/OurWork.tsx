@@ -58,7 +58,7 @@ const OurWorkSection: React.FC = () => {
               CREATIVE
             </span>
             <span className="text-3xl sm:text-5xl md:text-6xl font-light tracking-wide">
-              WORK
+              WORKS
             </span>
           </h2>
         </motion.div>
