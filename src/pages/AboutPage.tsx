@@ -160,12 +160,13 @@ const teamMembers = [
 
   },
   {
-    name: "Latha Reddy",
+    name: "Latha",
     role: "HEAD OF CLIENTS",
 
     image: LathaImage,
 
   },
+
   {
     name: "Sai Ram",
     role: "HEAD OF DIGITAL MARKETING",
