@@ -49,9 +49,9 @@ const commonSidebar = {
     "Paid Advertising / PPC"
   ],
   contact: {
-    phone: "+91 9980962504",
-    email: "info@vasishtha.co",
-    address: "Kondapur, Hyderabad"
+    phone: "+91 78420 16626",
+    email: "info@eshadigital.com",
+    address: " Ramakrishna Nagar,  Madeenaguda, Hyderabad-500049"
   },
   cta: {
     title: "Start Your Project?",

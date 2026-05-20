@@ -146,7 +146,7 @@ const Hero = () => {
 
           {/* FACEBOOK */}
           <motion.a
-            href="#"
+            href="https://www.facebook.com/profile.php?id=61563720044170"
             aria-label="Facebook"
             whileHover={{
               y: -4,
@@ -168,7 +168,7 @@ const Hero = () => {
 
           {/* INSTAGRAM */}
           <motion.a
-            href="#"
+            href="https://www.instagram.com/eshadigitalmarketing/"
             aria-label="Instagram"
             whileHover={{
               y: -4,
@@ -201,9 +201,31 @@ const Hero = () => {
             </svg>
           </motion.a>
 
+          {/* X (TWITTER) */}
+          <motion.a
+            href="https://x.com/LathaLat2026"
+            aria-label="X (Twitter)"
+            whileHover={{
+              y: -4,
+              color: "#fcba00",
+            }}
+            transition={{
+              duration: 0.3,
+            }}
+            className="text-[#192747]"
+          >
+            <svg
+              className="w-[16px] h-[16px]"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 22.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.008 4.04H5.078z" />
+            </svg>
+          </motion.a>
+
           {/* LINKEDIN */}
           <motion.a
-            href="#"
+            href="https://www.linkedin.com/in/esha-marketing-b9617a40a/"
             aria-label="LinkedIn"
             whileHover={{
               y: -4,
@@ -223,10 +245,10 @@ const Hero = () => {
             </svg>
           </motion.a>
 
-          {/* WHATSAPP */}
+          {/* YOUTUBE */}
           <motion.a
-            href="#"
-            aria-label="WhatsApp"
+            href="https://www.youtube.com/channel/UC-udKvmyd-UOUneoQNXuuOg"
+            aria-label="YouTube"
             whileHover={{
               y: -4,
               color: "#fcba00",
@@ -238,14 +260,10 @@ const Hero = () => {
           >
             <svg
               className="w-[18px] h-[18px]"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+              fill="currentColor"
               viewBox="0 0 24 24"
             >
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
             </svg>
           </motion.a>
 

@@ -2,7 +2,7 @@
 
 import React from "react";
 import AnimatedText from "../components/AnimatedText";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async"; // <-- Imported Helmet for SEO
 
 const ContactPage: React.FC = () => {
@@ -11,22 +11,22 @@ const ContactPage: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "ESHA Digital",
-    "image": "https://yourwebsite.com/EshaLogoWhite.png",
+    "image": "https://eshadigital.com/EshaLogoWhite.png",
     "description": "Full-Service Digital Marketing, Branding, and Web Development Agency based in Hyderabad.",
-    "telephone": "+91 9980962504",
+    "telephone": "+91 7842016626",
     "email": "info@eshadigital.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Tech Hub, Madhapur",
+      "streetAddress": "madhenaguda, hyderabad",
       "addressLocality": "Hyderabad",
       "addressRegion": "Telangana",
       "postalCode": "500081",
       "addressCountry": "IN"
     },
-    "url": "https://yourwebsite.com/contact",
+    "url": "https://eshadigital.com/contact",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91 9980962504",
+      "telephone": "+91 78420 16626",
       "contactType": "customer service",
       "email": "info@eshadigital.com",
       "areaServed": "IN",
@@ -48,21 +48,21 @@ const ContactPage: React.FC = () => {
         />
         <meta name="keywords" content="Contact ESHA Digital, Marketing Agency Hyderabad contact, Hire Web Developers, Branding Agency Contact, Madhapur Tech Hub" />
         
-        <link rel="canonical" href="https://yourwebsite.com/contact" />
+        <link rel="canonical" href="https://eshadigital.com/contact" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourwebsite.com/contact" />
+        <meta property="og:url" content="https://eshadigital.com/contact" />
         <meta property="og:title" content="Contact Us | ESHA Digital" />
         <meta property="og:description" content="Did we spark your curiosity? Let's talk about your next digital project. Get in touch with our team today." />
-        <meta property="og:image" content="https://yourwebsite.com/contact-og-image.jpg" />
+        <meta property="og:image" content="https://eshadigital.com/contact-og-image.jpg" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://yourwebsite.com/contact" />
+        <meta property="twitter:url" content="https://eshadigital.com/contact" />
         <meta property="twitter:title" content="Contact Us | ESHA Digital" />
         <meta property="twitter:description" content="Did we spark your curiosity? Let's talk about your next digital project. Get in touch with our team today." />
-        <meta property="twitter:image" content="https://yourwebsite.com/contact-og-image.jpg" />
+        <meta property="twitter:image" content="https://eshadigital.com/contact-og-image.jpg" />
 
         {/* Injecting Structured Data (JSON-LD) */}
         <script type="application/ld+json">
@@ -72,8 +72,6 @@ const ContactPage: React.FC = () => {
 
       <div className="bg-[#f6f7fb] min-h-screen pb-24 selection:bg-[#fcba00]/30 overflow-hidden relative">
         
-        {/* BACKGROUND GLOW */}
-
         {/* =========================================================
             HERO SECTION
         ========================================================= */}
@@ -142,29 +140,6 @@ const ContactPage: React.FC = () => {
             </div>
           </div>
 
-          {/* QUOTE */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 30,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{ once: true }}
-            transition={{
-              delay: 1.3,
-              duration: 1,
-              ease: "easeOut",
-            }}
-            className="relative flex flex-col items-center mt-4"
-          >
-            {/* ARROW */}
-
-            {/* TEXT */}
-          
-          </motion.div>
         </section>
 
         {/* =========================================================
@@ -253,25 +228,26 @@ const ContactPage: React.FC = () => {
                       </p>
 
                       <p className="text-lg font-light text-white/70">
-                        Tech Hub, Madhapur
+                        210, C-Block, II floor,
                       </p>
 
                       <p className="text-lg font-light text-white/70">
-                        Hyderabad, Telangana
+                       Ramakrishna Nagar, Madeenaguda, 
                       </p>
 
                       <p className="text-lg font-light text-white/70">
-                        500081 IND
+                        Hyderabad-500049
                       </p>
                     </div>
                   </div>
                 </div>
 
-                {/* MAP */}
+                {/* ================= GOOGLE MAPS INTEGRATION ================= */}
                 <div
                   className="
                     w-full
                     h-64
+                    md:h-72
                     bg-[#14203d]
                     mt-auto
                     relative
@@ -280,13 +256,17 @@ const ContactPage: React.FC = () => {
                     border-white/10
                   "
                 >
-                  <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay" />
-
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-white/40 text-sm uppercase tracking-widest">
-                      [ Map Integration Here ]
-                    </span>
-                  </div>
+                  <iframe
+                    title="ESHA Digital Location Map"
+                    src="https://maps.google.com/maps?q=Ramakrishna%20Nagar,%20Madeenaguda,%20Hyderabad,%20500049&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={false}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="absolute inset-0 w-full h-full"
+                  ></iframe>
                 </div>
               </div>
             </div>

@@ -153,14 +153,14 @@ const HeroSection: React.FC = () => {
 
 const teamMembers = [
   {
-    name: "Subhash",
+    name: "Subhash Reddy",
     role: "HEAD OF MARKETING",
 
     image: SubhashImage,
 
   },
   {
-    name: "Latha",
+    name: "Latha Reddy",
     role: "HEAD OF CLIENTS",
 
     image: LathaImage,

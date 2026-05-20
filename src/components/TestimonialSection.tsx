@@ -1,14 +1,9 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import { motion, type Variants } from "framer-motion";
 
 const TestimonialSection: React.FC = () => {
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const isDragging = useRef(false);
-  const startX = useRef(0);
-  const scrollLeft = useRef(0);
-
   /* ---------------- ANIMATIONS ---------------- */
 
   const containerVariants: Variants = {
@@ -74,44 +69,8 @@ const TestimonialSection: React.FC = () => {
     },
   ];
 
-  /* ---------------- DRAG LOGIC ---------------- */
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    isDragging.current = true;
-
-    if (sliderRef.current) {
-      sliderRef.current.classList.add("cursor-grabbing");
-      sliderRef.current.classList.remove("cursor-grab");
-
-      sliderRef.current.style.scrollSnapType = "none";
-
-      startX.current = e.pageX - sliderRef.current.offsetLeft;
-      scrollLeft.current = sliderRef.current.scrollLeft;
-    }
-  };
-
-  const handleMouseLeaveOrUp = () => {
-    isDragging.current = false;
-
-    if (sliderRef.current) {
-      sliderRef.current.classList.add("cursor-grab");
-      sliderRef.current.classList.remove("cursor-grabbing");
-
-      sliderRef.current.style.scrollSnapType = "";
-    }
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging.current || !sliderRef.current) return;
-
-    e.preventDefault();
-
-    const x = e.pageX - sliderRef.current.offsetLeft;
-
-    const walk = (x - startX.current) * 1.5;
-
-    sliderRef.current.scrollLeft = scrollLeft.current - walk;
-  };
+  // Duplicate the array to create a seamless infinite loop
+  const duplicatedTestimonials = [...testimonials, ...testimonials];
 
   return (
     <section className="w-full bg-[#f6f7fb] py-24 px-6 sm:px-8 lg:px-16 overflow-hidden">
@@ -126,9 +85,6 @@ const TestimonialSection: React.FC = () => {
           viewport={{ once: true }}
           className="mb-20"
         >
-          {/* SMALL QUOTE */}
-          
-
           {/* TITLE */}
           <motion.div variants={itemVariants} className="mb-8">
             <h2 className="uppercase text-[#192747]">
@@ -154,127 +110,102 @@ const TestimonialSection: React.FC = () => {
         </motion.div>
 
         {/* ---------------- TESTIMONIAL SLIDER ---------------- */}
-
-        <motion.div
-          ref={sliderRef}
-          onMouseDown={handleMouseDown}
-          onMouseLeave={handleMouseLeaveOrUp}
-          onMouseUp={handleMouseLeaveOrUp}
-          onMouseMove={handleMouseMove}
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="
-            flex
-            gap-8
-            overflow-x-auto
-            pb-10
-            pt-4
-            snap-x
-            snap-mandatory
-            cursor-grab
-            select-none
-          "
-          style={{
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-          }}
-        >
-          {/* HIDE SCROLLBAR */}
-          <style>{`
-            .overflow-x-auto::-webkit-scrollbar {
-              display: none;
-            }
-          `}</style>
-
-          {/* ---------------- CARDS ---------------- */}
-
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="
-                flex-none
-                w-[90vw]
-                sm:w-[760px]
-                min-h-[240px]
-                rounded-[2rem]
-                bg-white
-                border
-                border-[#192747]/5
-                px-8
-                py-7
-                sm:px-10
-                sm:py-8
-                snap-center
-                transition-all
-                duration-500
-                hover:-translate-y-1
-                flex
-                flex-col
-                justify-between
-              "
-              style={{
-                boxShadow: "0px 20px 50px rgba(25, 39, 71, 0.04)",
-              }}
-            >
-              {/* CONTENT */}
-              <div>
-                {/* NAME */}
-                <h3
+        
+        {/* Container handles the overflow hiding */}
+        <div className="w-full overflow-hidden pb-10 pt-4">
+          <motion.div
+            className="flex w-max"
+            // Slide from 0 to -50% of the duplicated track width
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              ease: "linear",
+              duration: 35, // Adjust this value to make it slide faster or slower
+              repeat: Infinity,
+            }}
+          >
+            {/* ---------------- CARDS ---------------- */}
+            {duplicatedTestimonials.map((testimonial, index) => (
+              <div key={index} className="pr-8"> {/* Padding-right instead of gap ensures perfect seamless loop calculation */}
+                <motion.div
                   className="
-                    text-[20px]
-                    sm:text-[22px]
-                    font-bold
-                    text-[#192747]
-                    leading-tight
-                    tracking-tight
-                    mb-1
-                    pointer-events-none
+                    flex-none
+                    w-[90vw]
+                    sm:w-[760px]
+                    min-h-[240px]
+                    rounded-[2rem]
+                    bg-white
+                    border
+                    border-[#192747]/5
+                    px-8
+                    py-7
+                    sm:px-10
+                    sm:py-8
+                    transition-all
+                    duration-500
+                    hover:-translate-y-1
+                    flex
+                    flex-col
+                    justify-between
                   "
+                  style={{
+                    boxShadow: "0px 20px 50px rgba(25, 39, 71, 0.04)",
+                  }}
                 >
-                  {testimonial.name}
-                </h3>
+                  {/* CONTENT */}
+                  <div>
+                    {/* NAME */}
+                    <h3
+                      className="
+                        text-[20px]
+                        sm:text-[22px]
+                        font-bold
+                        text-[#192747]
+                        leading-tight
+                        tracking-tight
+                        mb-1
+                      "
+                    >
+                      {testimonial.name}
+                    </h3>
 
-                {/* ROLE */}
-                <p
-                  className="
-                    italic
-                    font-light
-                    text-[15px]
-                    sm:text-[16px]
-                    text-[#192747]/60
-                    mb-5
-                    leading-relaxed
-                    pointer-events-none
-                    font-serif
-                  "
-                >
-                  {testimonial.role}
-                </p>
+                    {/* ROLE */}
+                    <p
+                      className="
+                        italic
+                        font-light
+                        text-[15px]
+                        sm:text-[16px]
+                        text-[#192747]/60
+                        mb-5
+                        leading-relaxed
+                        font-serif
+                      "
+                    >
+                      {testimonial.role}
+                    </p>
 
-                {/* QUOTE */}
-                <p
-                  className="
-                    text-[16px]
-                    sm:text-[17px]
-                    leading-[1.8]
-                    text-[#192747]/80
-                    max-w-[95%]
-                    pointer-events-none
-                    font-light
-                  "
-                >
-                  "{testimonial.quote}"
-                </p>
+                    {/* QUOTE */}
+                    <p
+                      className="
+                        text-[16px]
+                        sm:text-[17px]
+                        leading-[1.8]
+                        text-[#192747]/80
+                        max-w-[95%]
+                        font-light
+                      "
+                    >
+                      "{testimonial.quote}"
+                    </p>
+                  </div>
+
+                  {/* BOTTOM LINE */}
+                  <div className="mt-6 w-full h-[1px] bg-[#192747]/10" />
+                </motion.div>
               </div>
-
-              {/* BOTTOM LINE */}
-              <div className="mt-6 w-full h-[1px] bg-[#192747]/10" />
-            </motion.div>
-          ))}
-        </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

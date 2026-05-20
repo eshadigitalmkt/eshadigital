@@ -11,6 +11,7 @@ import ServicesPage from './pages/ServicesPage';
 import ServiceDetails from './pages/ServiceDetailsPage';
 import ContactPage from './pages/ContactPage';
 import ScrollToTop from './components/ScrollToTop';
+import FloatingContactButtons from './components/WhatsappIcons';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       {/* Navbar sits outside the Routes so it renders on EVERY page */}
       <Navbar />
       <ScrollToTop />
+      <FloatingContactButtons />
       {/* Routes handle which page content to show based on the URL */}
       <Routes>
         <Route path="/" element={<Home />} />
