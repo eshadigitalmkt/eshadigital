@@ -161,7 +161,7 @@ const teamMembers = [
   },
   {
     name: "Latha",
-    role: "HEAD OF CLIENTS",
+    role: "HEAD - Strategy & Operations",
 
     image: LathaImage,
 

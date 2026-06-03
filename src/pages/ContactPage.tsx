@@ -224,7 +224,7 @@ const ContactPage: React.FC = () => {
 
                     <div className="space-y-1">
                       <p className="text-xl font-medium tracking-wide">
-                        Esha Digital Agency
+                        Esha Digital Marketing
                       </p>
 
                       <p className="text-lg font-light text-white/70">
